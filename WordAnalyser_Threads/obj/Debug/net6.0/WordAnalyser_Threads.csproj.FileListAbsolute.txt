@@ -1,0 +1,14 @@
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\bin\Debug\net6.0\WordAnalyser_Threads.exe
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\bin\Debug\net6.0\WordAnalyser_Threads.deps.json
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\bin\Debug\net6.0\WordAnalyser_Threads.runtimeconfig.json
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\bin\Debug\net6.0\WordAnalyser_Threads.dll
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\bin\Debug\net6.0\WordAnalyser_Threads.pdb
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.GeneratedMSBuildEditorConfig.editorconfig
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.AssemblyInfoInputs.cache
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.AssemblyInfo.cs
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.csproj.CoreCompileInputs.cache
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.dll
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\refint\WordAnalyser_Threads.dll
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.pdb
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\WordAnalyser_Threads.genruntimeconfig.cache
+D:\TPL\WordAnalyser_noThreads\WordAnalyser_Threads\obj\Debug\net6.0\ref\WordAnalyser_Threads.dll
