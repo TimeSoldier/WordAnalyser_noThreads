@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 internal class Program
@@ -236,9 +236,28 @@ internal class Program
     static void Main(string[] args)
     {
         Stopwatch watch = new Stopwatch();
+        
+        Console.WriteLine("Please enter text address in such fashion - D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Gemma.txt");
+        bool success = false;
+        string address = "";
+        string fileText = "";
+        while (!success)
+        {
+            try
+            {
+                address = Console.ReadLine();
+                fileText = File.ReadAllText(address);
+                success = true;
+                Console.WriteLine("The address is correct");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("You`ve entered wrong adress.");
+            }
+        }
+
         watch.Start();
 
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
         string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
         string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
 
