@@ -239,7 +239,7 @@ internal class Program
     static void Main(string[] args)
     {
 
-        Console.WriteLine("Please enter text address");
+        Console.WriteLine("Please enter text address in such fashion - D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Gemma.txt");
         bool success = false;
         string address = "";
         while (!success)
