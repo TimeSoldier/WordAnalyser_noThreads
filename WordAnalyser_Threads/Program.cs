@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
 internal class Program
 {
     public static Stopwatch watch = new Stopwatch();
+    public static string[] words;
+    public static string fileText;
     public static void MostCommonWord()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
+
         Dictionary<string, int> mostCommon = new Dictionary<string, int>();
         foreach (string word in words)
         {
@@ -58,9 +58,6 @@ internal class Program
     }
     public static void LeastCommonWord()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
         Dictionary<string, int> leastCommon = new Dictionary<string, int>();
         foreach (string word in words)
         {
@@ -110,9 +107,7 @@ internal class Program
     }
     public static void WordCount()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
+
         int count = 0;
         foreach (string word in words)
         {
@@ -123,9 +118,6 @@ internal class Program
     }
     public static void AverageLenght()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
         int letters = 0;
         foreach (string word in words)
         {
@@ -142,9 +134,6 @@ internal class Program
     }
     public static void LongestWords()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
         bool buffer = true;
         List<string> longest = new List<string>();
         int i = 0;
@@ -195,9 +184,6 @@ internal class Program
     }
     public static void ShortestWords()
     {
-        string fileText = File.ReadAllText(@"D:\TPL\WordAnalyser_noThreads\WordAnalyser_noThreads\Житената питка.txt");
-        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
-        string[] words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
         bool buffer = true;
         List<string> shortest = new List<string>();
         int i = 100;
@@ -249,11 +235,32 @@ internal class Program
     }
 
 
-
+    
     static void Main(string[] args)
     {
+
+        Console.WriteLine("Please enter text address");
+        bool success = false;
+        string address = "";
+        while (!success)
+        {
+            try
+            {
+                address = Console.ReadLine();
+                fileText = File.ReadAllText(address);
+                success = true;
+                Console.WriteLine("The address is correct");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("You`ve entered wrong adress.");
+            }
+        }
         
         watch.Start();
+
+        string[] delimiterStrings = { " ", ",", ".", ":", "\n", ";", "_", "!", "?", "\t", "\r", "“", "(", ")", "’", "”", "n’t", "’d", "’s", "\"", "‘", "…" };
+        words = fileText.Split(delimiterStrings, System.StringSplitOptions.RemoveEmptyEntries);
 
         Thread a = new Thread(ShortestWords);
         a.Start();
@@ -273,7 +280,7 @@ internal class Program
         d.Join();
         e.Join();
         f.Join();
-        watch.Start();
+
         Console.WriteLine( "(..." +  watch.ElapsedMilliseconds + ")");
 
     }
